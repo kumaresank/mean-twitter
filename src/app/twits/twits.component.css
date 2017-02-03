@@ -1,0 +1,15 @@
+.align-form-right {
+    text-align: right;
+    margin-top:20px;
+}
+.card-text {
+    margin: 20px auto 0;
+}
+.topic {
+    background: #0275d8;
+    color: #FFF;
+    padding: 10px;
+}
+.search-results {
+      height: 100%;
+}
