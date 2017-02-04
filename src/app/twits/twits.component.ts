@@ -10,14 +10,18 @@ export class TwitsComponent implements OnInit {
   twits:any;
   q:any;
   meta:any;
+  interval:boolean = false;
   constructor(public twitService: TwitsService) {}
 
-  ngOnInit() { }
+  ngOnInit() {
+      setInterval(() => { if(this.interval){ this.fetchTwits(); } }, (1000*60*1));
+   }
 
   fetchTwits() {
       this.twitService.getTwits('?q='+this.q).subscribe(twits => {
           this.meta = twits.search_metadata;
           this.twits = twits.statuses;
+          this.interval = true;
       });
   }
 
